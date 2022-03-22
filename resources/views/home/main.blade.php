@@ -38,44 +38,6 @@
                 </div>
                 <div class="clear"></div>
             </div>
-            <div class="m_3"><span class="left_line"></span> Top Features<span class="right_line"> </span></div>
-            <div class="content-middle">
-                <div class="col_1_of_middle span_1_of_middle">
-                    <img src="{{asset("assets")}}/images/mac_img1.png" alt=""/>
-                </div>
-                <div class="col_1_of_middle span_1_of_middle">
-                    <h3>diam nonummy nibh euismod tincidunt ut laoreet dolore</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie</p>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam</p>
-                    <div class="btn"><a href="#">Learn More</a></div>
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div class="content-middle-bottom">
-                <div class="col_1_of_middle span_1_of_middle">
-                    <h3>diam nonummy nibh euismod tincidunt ut laoreet dolore</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duisautem vel eum iriure dolor in hendrerit in vulputate velit esse molestie</p>
-                    <div class="btn"><a href="#">Learn More</a></div>
-                </div>
-                <div class="col_1_of_middle span_1_of_middle">
-                    <ul class="progress vertical">
-                        <li class="bar bar-success" style="width:100%;height:70%;"> </li>
-                    </ul>
-                    <ul class="progress vertical">
-                        <li class="bar bar-success" style="width:100%;height:60%;"> </li>
-                    </ul>
-                    <ul class="progress vertical">
-                        <li class="bar bar-success" style="width:100%;height:20%;"> </li>
-                    </ul>
-                    <ul class="progress vertical">
-                        <li class="bar bar-success" style="width:100%;height:40%;"> </li>
-                    </ul>
-                    <ul class="progress vertical">
-                        <li class="bar bar-success" style="width:100%;height:10%;"> </li>
-                    </ul>
-                </div>
-                <div class="clear"></div>
-            </div>
             <div class="m_3"><span class="left_line"></span> Our Projects<span class="right_line"> </span></div>
             <div class="content-top">
                 <div class="col_1_of_projects span_1_of_projects"><a href="#">
@@ -87,7 +49,7 @@
                                 <a class="popup-with-zoom-anim" href="#small-dialog3"> <div class="info">Read More</div></a>
                                 <div id="small-dialog3" class="mfp-hide">
                                     <div class="pop_up2">
-                                        <img src="{{asset("assets")}}/images/pic3.jpg"/ alt=""/>
+                                        <img src="{{asset("assets")}}/images/pic3.jpg" alt=""/>
                                         <h3 class="m_4"><a href="#">augue duis dolore te feugait</a></h3>
                                         <p class="m_5">Photography</p>
                                     </div>

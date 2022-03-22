@@ -43,8 +43,8 @@ body{
 	width:80%;
 	margin:0 auto;
 	-moz-transition:all .2s linear;
-	-webkit-transition:all .2s linear;
-	-o-transition:all .2s linear;
+	-webkit-transition:all .2s linear; 
+	-o-transition:all .2s linear; 
 	-ms-transition:all .2s linear;
 }
 .header-top{
@@ -77,8 +77,8 @@ body{
 }
 .nav:before,
 .nav:after {
-    content: " ";
-    display: table;
+    content: " "; 
+    display: table; 
 }
 .nav:after {
     clear: both;
@@ -89,14 +89,16 @@ body{
 }
 .nav li a {
 	display: block;
-	padding: 10px 30px 27px 10px;
+	padding: 10px 20px 40px 20px;
 	color: #fff;
 	font-size:1em;
 }
 .nav li {
     position: relative;
 }
-
+.nav li.active a, .nav li a:hover {
+	border-bottom:10px solid #faa645;
+}
 .nav > li {
     float: left;
 }
@@ -390,7 +392,7 @@ span.right_line{
 	background-color:#ffa540;
 }
 .content-middle-bottom{
-	padding:5% 0 0 0;
+	padding:5% 0 0 0; 
 }
 ul.progress.vertical {
     position: relative;
@@ -487,7 +489,7 @@ h3.m_4{
 h3.m_4 a{
 	color:#555;
 	text-transform:uppercase;
-	font-size:1em;
+	font-size:17px;
 }
 h3.m_4 a:hover{
 	color:#FFA540;
