@@ -5,7 +5,7 @@
     <div class="h_menu4"><!-- start h_menu4 -->
         <a class="toggleMenu" href="#">Menu</a>
         <ul class="nav">
-            <li><a href="{{route('home')}}">Home</a></li>
+            <li @if($where === 'main')class="active"@endif><a href="{{route('home')}}">Home</a></li>
 
             <li><a href="portfolio.html">Portfolio</a>
                 <ul>
@@ -14,14 +14,14 @@
                     <li><a href="portfolio.html">People</a></li>
                 </ul>
             </li>
-            <li>
+            <li @if($where === 'contact')class="active"@endif>
                 <a href="{{route('contact')}}">Contact</a>
             </li>
             <li>
                 <a href="#">Login</a>
             </li>
         </ul>
-        
+
         <script type="text/javascript" src="{{asset("assets")}}/js/nav.js"></script>
     </div><!-- end h_menu4 -->
     <div class="clear"></div>
