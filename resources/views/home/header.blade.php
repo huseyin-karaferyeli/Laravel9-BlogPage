@@ -5,7 +5,7 @@
     <div class="h_menu4"><!-- start h_menu4 -->
         <a class="toggleMenu" href="#">Menu</a>
         <ul class="nav">
-            <li @if($where === 'main')class="active"@endif><a href="{{route('home')}}">Home</a></li>
+            <li @if($where === 'main')class="active"@endif><a href="{{route('home')}}">Main</a></li>
 
             <li><a href="portfolio.html">Portfolio</a>
                 <ul>
