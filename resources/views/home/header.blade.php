@@ -7,10 +7,10 @@
                 </div>
                 <div class="col-xs-10 text-right menu-1">
                     <ul>
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="work.html">Work</a></li>
-                        <li class="has-dropdown">
-                            <a href="blog.html">Blog</a>
+                        <li @if($where === 'main')class="active"@endif><a href={{route('home')}}>Home</a></li>
+                        <li @if($where === 'work')class="active"@endif><a href="work.html">Work</a></li>
+                        <li @if($where === 'blog')class="active has-dropdown" @else class="has-dropdown" @endif>
+                            <a href={{route('blog')}}>Blog</a>
                             <ul class="dropdown">
                                 <li><a href="#">Web Design</a></li>
                                 <li><a href="#">eCommerce</a></li>
@@ -18,8 +18,8 @@
                                 <li><a href="#">API</a></li>
                             </ul>
                         </li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li @if($where === 'about')class="active"@endif><a href="about.html">About</a></li>
+                        <li @if($where === 'contact')class="active"@endif><a href={{route('contact')}}>Contact</a></li>
                     </ul>
                 </div>
             </div>

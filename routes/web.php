@@ -19,6 +19,8 @@ Route::get('/', [HomeController::class, 'home']) -> name('home');
 
 Route::get('/contact', [HomeController::class, 'contact']) -> name('contact');
 
+Route::get('/blog', [HomeController::class, 'blog']) -> name('blog');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

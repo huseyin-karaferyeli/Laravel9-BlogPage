@@ -13,4 +13,8 @@ class HomeController extends Controller
     public function contact(){
         return view('home.contact', ['where' => 'contact']);
     }
+
+    public function blog(){
+        return view('home.blog', ['where' => 'blog']);
+    }
 }
