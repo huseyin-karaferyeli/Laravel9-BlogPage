@@ -36,6 +36,7 @@
                         <p>soluta nobis eleifend option congue<br> adipiscing elit, sed diam nonummy nibh<br>euismod tincidunt ut laoreet dolore delenit.</p>
                     </div>
                 </div>
+
                 <div class="clear"></div>
             </div>
             <div class="m_3"><span class="left_line"></span> Our Projects<span class="right_line"> </span></div>
@@ -116,8 +117,12 @@
                         <h3 class="m_4"><a href="#">augue duis dolore te feugait</a></h3>
                         <p class="m_5">Marketing</p>
                     </a> </div>
+
+
+
                 <div class="clear"></div>
             </div>
+
             <div class="m_3"><span class="left_line"></span>Testimonials<span class="right_line"> </span></div>
             <div class="wmuSlider example">
                 <div class="wmuSliderWrapper">
