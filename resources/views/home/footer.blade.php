@@ -1,58 +1,42 @@
-<div class="footer">
-    <div class="wrap">
-        <div class="footer-grid footer-grid1">
-            <div class="f-logo">
-                <a href="index.html"><img src="{{asset("assets")}}/images/f-logo.png" alt=""></a>
+<div class="container-wrap">
+    <footer id="fh5co-footer" role="contentinfo">
+        <div class="row">
+            <div class="col-md-3 fh5co-widget">
+                <h4>About Neat</h4>
+                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
             </div>
-            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</p>
-        </div>
-        <div class="footer-grid footer-grid2">
-            <h4>Contact</h4>
-            <ul>
-                <li><i class="pin"> </i><div class="extra-wrap">
-                        <p>2321 Street name,<br> City name,Country</p>
-                    </div></li>
-                <li><i class="phone"> </i><div class="extra-wrap">
-                        <p>+2321 256 652</p>
-                    </div></li>
-                <li><i class="mail"> </i><div class="extra-wrap1">
-                        <p>info@comapnay name.com</p>
-                    </div></li>
-                <li><i class="earth"> </i><div class="extra-wrap1">
-                        <p>info@comapnay name.com</p>
-                    </div></li>
-            </ul>
-        </div>
-        <div class="footer-grid footer-grid3">
-            <h4>Latest Tweets</h4>
-            <div class="recent-tweet">
-                <div class="recent-tweet-icon">
-                    <span> </span>
-                </div>
-                <div class="recent-tweet-info">
-                    <p>Ds which don't look even slightly believable. If you are going to use a passage <a href="#"> 3 Hours Ago</a></p>
-                </div>
-                <div class="clear"> </div>
+            <div class="col-md-3 col-md-push-1">
+                <h4>Latest Posts</h4>
+                <ul class="fh5co-footer-links">
+                    <li><a href="#">Amazing Templates</a></li>
+                    <li><a href="#">100+ Free Download Templates</a></li>
+                    <li><a href="#">Neat is now available</a></li>
+                    <li><a href="#">Download 1000+ icons</a></li>
+                    <li><a href="#">Big Deal for this month of March, Join Us here</a></li>
+                </ul>
             </div>
-            <div class="recent-tweet1">
-                <div class="recent-tweet-icon">
-                    <span> </span>
-                </div>
-                <div class="recent-tweet-info">
-                    <p>Ds which don't look even slightly believable. If you are going to use a passage <a href="#"> 3 Hours Ago</a></p>
-                </div>
-                <div class="clear"> </div>
-            </div>
-        </div>
-        <div class="footer-grid footer-grid4">
-            <h4>News Letter</h4>
-            <p>Randomised words which don't look even slightly believable. If you are going to use a passage</p>
-            <form>
-                <input type="text" value="Email Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email Address';}">
-                <input type="submit" value="">
-            </form>
-        </div>
-        <div class="clear"> </div>
-    </div>
-</div>
 
+            <div class="col-md-3 col-md-push-1">
+                <h4>Links</h4>
+                <ul class="fh5co-footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About us</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h4>Contact Information</h4>
+                <ul class="fh5co-footer-links">
+                    <li>198 West 21th Street, <br> Suite 721 New York NY 10016</li>
+                    <li><a href="tel://1234567920">+ 1235 2355 98</a></li>
+                    <li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
+                    <li><a href="http://gettemplates.co">gettemplates.co</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+</div><!-- END container-wrap -->

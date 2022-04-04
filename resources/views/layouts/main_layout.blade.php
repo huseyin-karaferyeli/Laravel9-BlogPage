@@ -11,20 +11,6 @@
     <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
     <meta name="author" content="freehtml5.co" />
 
-    <!--
-    //////////////////////////////////////////////////////
-
-    FREE HTML5 TEMPLATE
-    DESIGNED & DEVELOPED by FreeHTML5.co
-
-    Website: 		http://freehtml5.co/
-    Email: 			info@freehtml5.co
-    Twitter: 		http://twitter.com/fh5co
-    Facebook: 		https://www.facebook.com/fh5co
-
-    //////////////////////////////////////////////////////
-     -->
-
     <!-- Facebook and Twitter integration -->
     <meta property="og:title" content=""/>
     <meta property="og:image" content=""/>
@@ -58,7 +44,7 @@
     <!-- Modernizr JS -->
     <script src="{{asset("assets")}}/js/modernizr-2.6.2.min.js"></script>
     <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
+    <!--[if lt IE 9]> -->
     <script src="{{asset("assets")}}/js/respond.min.js"></script>
     <![endif]-->
 
@@ -70,13 +56,29 @@
 
 <div class="fh5co-loader"></div>
 
-<!-- header -->
 
-<div class="main">
-    @yield('content')
+<div id="page">
+
+    @include('home.header')
+
+    <div class="container-wrap">
+
+        @yield('slider')
+
+        @yield('content')
+
+    </div>
+
+    @include('home.footer')
+
 </div>
 
-<!-- footer -->
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+</div>
+
+@include('home.scrpt')
+
 </body>
 
 </html>
