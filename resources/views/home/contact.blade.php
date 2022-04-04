@@ -1,35 +1,51 @@
 @extends('layouts.main_layout')
 
-@section('title', 'Blog Page')
+@section('title', 'Contact')
 
 @section('content')
-    <div class="main">
-        <div class="wrap">
-            <div class="contact">
-                <div class="m_contact"><span class="left_line1"> </span>Contact<span class="right_line1"> </span></div>
-                <p class="m_12">dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
-                <div class="contatct-top">
-                    <form method="post" action="contact-post.html">
-                        <div class="to">
-                            <input type="text" class="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
-                            <input type="text" class="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" style="margin-left: 10px">
+    <div id="fh5co-contact">
+
+        <div class="row animate-box fadeInUp animated-fast">
+            <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+                <h2>Contact us</h2>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-md-push-1 animate-box fadeInUp animated-fast">
+                <h3>Our Address</h3>
+                <ul class="contact-info">
+                    <li><i class="icon-location4"></i>198 West 21th Street, Suite 721 New York NY 10016</li>
+                    <li><i class="icon-phone3"></i>+ 1235 2355 98</li>
+                    <li><i class="icon-location3"></i><a href="#">info@yoursite.com</a></li>
+                    <li><i class="icon-globe2"></i><a href="#">www.yoursite.com</a></li>
+                </ul>
+            </div>
+            <div class="col-md-7 col-md-push-1 animate-box fadeInUp animated-fast">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Name">
                         </div>
-                        <div class="to">
-                            <input type="text" class="text" value="Your Website" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Website';}">
-                            <input type="text" class="text" value="Subject" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" style="margin-left: 10px">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Email">
                         </div>
-                        <div class="text">
-                            <textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message:</textarea>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <textarea name="" class="form-control" id="" cols="30" rows="7" placeholder="Message"></textarea>
                         </div>
-                        <div>
-                            <input type="submit" value="Submit">
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input type="submit" value="Send Message" class="btn btn-primary btn-modify">
                         </div>
-                    </form>
-                    <div class="map">
-                        <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed"></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#666;text-align:left;font-size:12px">View Larger Map</a></small>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 @endsection
