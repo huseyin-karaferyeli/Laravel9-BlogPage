@@ -1,9 +1,9 @@
 <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="navbar-brand-wrapper d-flex align-items-center">
         <a class="navbar-brand brand-logo" href="index.html">
-            <img src="{{asset("assets/admin")}}/images/logo.svg" alt="logo" class="logo-dark" />
+            <img src="{{asset("assets")}}/admin/images/logo.svg" alt="logo" class="logo-dark" />
         </a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{asset("assets/admin")}}/images/logo-mini.svg" alt="logo" /></a>
+        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{asset("assets")}}/admin/images/logo-mini.svg" alt="logo" /></a>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center flex-grow-1">
         <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Welcome stallar dashboard!</h5>
@@ -27,7 +27,7 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
-                            <img src="{{asset("assets/admin")}}/images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
+                            <img src="{{asset("assets")}}/admin/images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
                         </div>
                         <div class="preview-item-content flex-grow py-2">
                             <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
@@ -36,7 +36,7 @@
                     </a>
                     <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
-                            <img src="{{asset("assets/admin")}}/images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+                            <img src="{{asset("assets")}}/admin/images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
                         </div>
                         <div class="preview-item-content flex-grow py-2">
                             <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
@@ -45,7 +45,7 @@
                     </a>
                     <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
-                            <img src="{{asset("assets/admin")}}/images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
+                            <img src="{{asset("assets")}}/admin/images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
                         </div>
                         <div class="preview-item-content flex-grow py-2">
                             <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
@@ -74,10 +74,10 @@
             </li>
             <li class="nav-item dropdown d-none d-xl-inline-flex user-dropdown">
                 <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                    <img class="img-xs rounded-circle ml-2" src="{{asset("assets/admin")}}/images/faces/face8.jpg" alt="Profile image"> <span class="font-weight-normal"> Henry Klein </span></a>
+                    <img class="img-xs rounded-circle ml-2" src="{{asset("assets")}}/admin/images/faces/face8.jpg" alt="Profile image"> <span class="font-weight-normal"> Henry Klein </span></a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                     <div class="dropdown-header text-center">
-                        <img class="img-md rounded-circle" src="{{asset("assets/admin")}}/images/faces/face8.jpg" alt="Profile image">
+                        <img class="img-md rounded-circle" src="{{asset("assets")}}/admin/images/faces/face8.jpg" alt="Profile image">
                         <p class="mb-1 mt-3">Allen Moreno</p>
                         <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
                     </div>
