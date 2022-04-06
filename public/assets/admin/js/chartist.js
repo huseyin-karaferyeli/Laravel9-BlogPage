@@ -3,7 +3,7 @@
   'use strict';
   if ($('#ct-chart-line').length) {
     new Chartist.Line('#ct-chart-line', {
-      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+      labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
       series: [
         [12, 9, 7, 8, 5],
         [2, 1, 3.5, 7, 3],
@@ -88,7 +88,7 @@
   //Horizontal bar chart
   if ($('#ct-chart-horizontal-bar').length) {
     new Chartist.Bar('#ct-chart-horizontal-bar', {
-      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
       series: [
         [5, 4, 3, 7, 5, 10, 3],
         [3, 2, 9, 5, 4, 6, 4],
@@ -101,16 +101,6 @@
       horizontalBars: true,
       axisY: {
         offset: 20
-      },
-      axisX: {
-        labelOffset: {
-          x: 0,
-          y: 6
-        },
-      },
-      chartPadding: {
-        left: 20,
-        bottom: 20
       }
     });
   }

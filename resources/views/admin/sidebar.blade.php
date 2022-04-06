@@ -3,7 +3,7 @@
         <li class="nav-item nav-profile">
             <a href="#" class="nav-link">
                 <div class="profile-image">
-                    <img class="img-xs rounded-circle" src="{{asset("assets")}}/admin/images/faces/face8.jpg" alt="profile image">
+                    <img class="img-xs rounded-circle" src="{{asset("assets/admin")}}/images/faces/face8.jpg" alt="profile image">
                     <div class="dot-indicator bg-success"></div>
                 </div>
                 <div class="text-wrapper">
@@ -33,31 +33,31 @@
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{asset("assets")}}/admin/pages/ui-features/buttons.html">Buttons</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="{{asset("assets")}}/admin/pages/ui-features/typography.html">Typography</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{asset("assets/admin")}}/pages/ui-features/buttons.html">Buttons</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{asset("assets/admin")}}/pages/ui-features/typography.html">Typography</a></li>
                 </ul>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{asset("assets")}}/admin/pages/icons/simple-line-icons.html">
+            <a class="nav-link" href="{{asset("assets/admin")}}/pages/icons/simple-line-icons.html">
                 <span class="menu-title">Icons</span>
                 <i class="icon-globe menu-icon"></i>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{asset("assets")}}/admin/pages/forms/basic_elements.html">
+            <a class="nav-link" href="{{asset("assets/admin")}}/pages/forms/basic_elements.html">
                 <span class="menu-title">Form Elements</span>
                 <i class="icon-book-open menu-icon"></i>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{asset("assets")}}/admin/pages/charts/chartist.html">
+            <a class="nav-link" href="{{asset("assets/admin")}}/pages/charts/chartist.html">
                 <span class="menu-title">Charts</span>
                 <i class="icon-chart menu-icon"></i>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{asset("assets")}}/admin/pages/tables/basic-table.html">
+            <a class="nav-link" href="{{asset("assets/admin")}}/pages/tables/basic-table.html">
                 <span class="menu-title">Tables</span>
                 <i class="icon-grid menu-icon"></i>
             </a>
