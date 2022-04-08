@@ -1,55 +1,45 @@
 <!DOCTYPE html>
 
-<html>
+<html
+
+    lang="en"
+    class="light-style layout-menu-fixed"
+    dir="ltr"
+    data-theme="theme-default"
+    data-assets-path="{{asset("assets")}}/admin/"
+    data-template="vertical-menu-template-free"
+>
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>@yield('title')</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="{{asset("assets/admin")}}/vendors/simple-line-icons/css/simple-line-icons.css">
-    <link rel="stylesheet" href="{{asset("assets/admin")}}/vendors/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" href="{{asset("assets/admin")}}/vendors/css/vendor.bundle.base.css">
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="{{asset("assets/admin")}}/vendors/daterangepicker/daterangepicker.css">
-    <link rel="stylesheet" href="{{asset("assets/admin")}}/vendors/chartist/chartist.min.css">
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <!-- endinject -->
-    <!-- Layout styles -->
-    <link rel="stylesheet" href="{{asset("assets/admin")}}/css/style.css">
-    <!-- End layout styles -->
-    <link rel="shortcut icon" href="{{asset("assets/admin")}}/images/favicon.png" />
+    @include('admin.head')
 
     @yield('head')
 </head>
 
 <body>
 
-<div class="container-scroller">
-    @include('admin.header')
-
-    <div class="container-fluid page-body-wrapper">
+<div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
 
         @include('admin.sidebar')
 
-        <div class="main-panel">
+        <div class="layout-page">
 
-            <div class="content-wrapper">
+            @include('admin.header')
+
+            <div class="container-wrapper">
                 @yield('content')
+
+                <div class="content-backdrop fade"></div>
             </div>
-
-            @include('admin.footer')
-
         </div>
-
     </div>
 
-    @include('admin.scrpt')
+    <div class="layout-overlay layout-menu-toggle"></div>
 
 </div>
+
+@include('admin.scrpt')
 
 </body>
 

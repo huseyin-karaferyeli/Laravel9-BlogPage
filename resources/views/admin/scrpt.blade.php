@@ -1,17 +1,19 @@
-<!-- container-scroller -->
-<!-- plugins:js -->
-<script src="{{asset("assets/admin")}}/js/vendor.bundle.base.js"></script>
-<!-- endinject -->
-<!-- Plugin js for this page -->
-<script src="{{asset("assets/admin")}}/vendors/chart.js/Chart.min.js"></script>
-<script src="{{asset("assets/admin")}}/vendors/moment/moment.min.js"></script>
-<script src="{{asset("assets/admin")}}/vendors/daterangepicker/daterangepicker.js"></script>
-<script src="{{asset("assets/admin")}}/vendors/chartist/chartist.min.js"></script>
-<!-- End plugin js for this page -->
-<!-- inject:js -->
-<script src="{{asset("assets/admin")}}/js/off-canvas.js"></script>
-<script src="{{asset("assets/admin")}}/js/misc.js"></script>
-<!-- endinject -->
-<!-- Custom js for this page -->
-<script src="{{asset("assets/admin")}}/js/dashboard.js"></script>
-<!-- End custom js for this page -->
+<!-- Core JS -->
+<!-- build:js assets/vendor/js/core.js -->
+<script src="{{asset("assets/admin")}}/vendor/libs/jquery/jquery.js"></script>
+<script src="{{asset("assets/admin")}}/vendor/libs/popper/popper.js"></script>
+<script src="{{asset("assets/admin")}}/vendor/js/bootstrap.js"></script>
+<script src="{{asset("assets/admin")}}/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+<script src="{{asset("assets/admin")}}/vendor/js/menu.js"></script>
+<!-- endbuild -->
+
+<!-- Vendors JS -->
+
+<!-- Main JS -->
+<script src="{{asset("assets/admin")}}/js/main.js"></script>
+
+<!-- Page JS -->
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
