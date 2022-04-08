@@ -49,8 +49,8 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label" for="basic-default-company">Description</label>
-                            <input type="text" class="form-control" id="basic-default-company" name="description" placeholder="Description">
+                            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" placeholder="Description"></textarea>
                         </div>
 
                         <div class="demo-vertical-spacing demo-only-element mb-3">
@@ -71,7 +71,9 @@
 
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-lg">Send</button>
+                        <div class="card mt-4">
+                            <button class="btn btn-primary btn-lg " type="submit">Add New Category</button>
+                        </div>
                     </form>
                 </div>
             </div>

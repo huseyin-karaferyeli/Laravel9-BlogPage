@@ -30,8 +30,8 @@
         <div class="col-xl">
             <div class="card mb-4">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">Edit Category</h5>
-                    <small class="text-muted float-end">Categories</small>
+                    <h5 class="mb-0">Edit Category: {{$data -> title}}</h5>
+                    <small class="text-muted float-end">Status: @if($data -> status == 'True') Active @else False @endif</small>
                 </div>
 
                 <div class="card-body">
@@ -49,8 +49,8 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label" for="basic-default-company">Description</label>
-                            <input type="text" class="form-control" id="basic-default-company" name="description" value="{{$data -> description}}">
+                            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description">{{$data -> description}}</textarea>
                         </div>
 
                         <div class="demo-vertical-spacing demo-only-element mb-3">
@@ -78,7 +78,9 @@
 
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-lg">Send</button>
+                        <div class="card mt-4">
+                            <button class="btn btn-primary btn-lg " type="submit">Update Category</button>
+                        </div>
                     </form>
                 </div>
             </div>
