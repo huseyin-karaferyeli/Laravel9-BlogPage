@@ -47,9 +47,9 @@
                             <td>{{$rs -> description}}</td>
                             <td>-</td>
                             <td>@if($rs -> status == 'True')
-                                    <span class="badge bg-success">True</span>
+                                    <span class="badge bg-success">Active</span>
                             @else
-                                <span class="badge bg-warning">False</span>
+                                <span class="badge bg-warning">Inactive</span>
                                 @endif</td>
 
                             <td>
@@ -82,13 +82,13 @@
                                 <li class="page-item prev">
                                     <a class="page-link" href="javascript:void(0);"><i class="tf-icon bx bx-chevrons-left"></i></a>
                                 </li>
-                                <li class="page-item">
+                                <li class="page-item active">
                                     <a class="page-link" href="javascript:void(0);">1</a>
                                 </li>
                                 <li class="page-item">
                                     <a class="page-link" href="javascript:void(0);">2</a>
                                 </li>
-                                <li class="page-item active">
+                                <li class="page-item">
                                     <a class="page-link" href="javascript:void(0);">3</a>
                                 </li>
                                 <li class="page-item">

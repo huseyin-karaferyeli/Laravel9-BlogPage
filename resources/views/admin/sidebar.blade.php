@@ -73,28 +73,29 @@
         <!-- General -->
 
         <!-- Dashboard -->
-        <li class="menu-item active">
+        <li class="menu-item @if(request() -> path() == 'admin') active @endif">
             <a href="/admin" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
             </a>
         </li>
 
+        <!-- Settings -->
+        <li class="menu-item @if(request() -> path() == 'admin/settings') active @endif">
+            <a href="/admin" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-cog"></i>
+                <div data-i18n="Analytics">Settings</div>
+            </a>
+        </li>
+
         <!-- FAQ -->
-        <li class="menu-item">
+        <li class="menu-item @if(request() -> path() == 'admin/faq') active @endif">
             <a href="/admin" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-question-mark"></i>
                 <div data-i18n="Analytics">FAQs</div>
             </a>
         </li>
 
-        <!-- Settings -->
-        <li class="menu-item">
-            <a href="/admin" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-task"></i>
-                <div data-i18n="Analytics">Settings</div>
-            </a>
-        </li>
 
         <!-- About Main Page And Content -->
 
@@ -103,7 +104,7 @@
         </li>
 
         <!-- Categories -->
-        <li class="menu-item">
+        <li class="menu-item @if(request() -> path() == 'admin/category') active @endif">
             <a href="/admin/category" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-category"></i>
                 <div data-i18n="Analytics">Categories</div>
@@ -111,7 +112,7 @@
         </li>
 
         <!-- Blogs -->
-        <li class="menu-item">
+        <li class="menu-item @if(request() -> path() == 'admin/blog') active @endif">
             <a href="/admin" class="menu-link">
                 <i class="menu-icon tf-icons bx bxl-blogger"></i>
                 <div data-i18n="Analytics">Blogs</div>
@@ -125,7 +126,7 @@
         </li>
 
         <!-- Users -->
-        <li class="menu-item">
+        <li class="menu-item @if(request() -> path() == 'admin/users') active @endif">
             <a href="/admin" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
                 <div data-i18n="Analytics">Users</div>
@@ -133,7 +134,7 @@
         </li>
 
         <!-- Messages -->
-        <li class="menu-item">
+        <li class="menu-item @if(request() -> path() == 'admin/messages') active @endif">
             <a href="/admin" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-message"></i>
                 <div data-i18n="Analytics">Messages</div>
@@ -141,7 +142,7 @@
         </li>
 
         <!-- Comments -->
-        <li class="menu-item">
+        <li class="menu-item @if(request() -> path() == 'admin/comments') active @endif">
             <a href="/admin" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-comment"></i>
                 <div data-i18n="Analytics">Comments</div>
