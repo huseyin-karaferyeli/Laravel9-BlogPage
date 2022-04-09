@@ -28,8 +28,9 @@
             @include('admin.header')
 
             <div class="container-wrapper">
-                @yield('content')
-
+                <div class="container-xxl flex-grow-1 container-p-y">
+                    @yield('content')
+                </div>
                 <div class="content-backdrop fade"></div>
             </div>
         </div>

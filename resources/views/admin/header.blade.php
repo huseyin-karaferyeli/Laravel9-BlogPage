@@ -8,9 +8,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbar-ex-2">
                 <div class="navbar-nav me-auto">
-                    <a class="nav-item nav-link active" href="/">Home</a>
-                    <a class="nav-item nav-link" href="/admin">Admin</a>
-                    <a class="nav-item nav-link" href="/admin">Contact</a>
+                    <a class="nav-item nav-link active" href="{{route('home')}}">Home</a>
+                    <a class="nav-item nav-link" href="{{route('admin.index')}}">Admin</a>
+                    <a class="nav-item nav-link" href="{{route('admin.index')}}">Contact</a>
                 </div>
 
                 <span class="navbar-text">However far away 🤍</span>
