@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $data = Category::all();
-        return view('admin.category.main', [
+        $data = Blog::all();
+
+        return view('admin.blog.main', [
             'data' => $data
         ]);
     }
@@ -28,8 +29,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
-        return view('admin.category.create');
+        return view('admin.blog.create');
     }
 
     /**
@@ -40,30 +40,38 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new Category();
+        $data = new Blog();
 
-        $data -> parentId = 0;
+        $data -> category_id = $request -> category_id;
+        $data -> user_id = 0; //$request -> user_id;
         $data -> title = $request -> title;
         $data -> keywords = $request -> keywords;
         $data -> description = $request -> description;
+        $data -> image = $request -> image;
+        $data -> detail = $request -> detail;
+        $data -> file = $request -> file;
+        $data -> likes = $request -> likes;
+        $data -> seen = $request -> seen;
+        $data -> read_time = $request -> read_time;
         $data -> status = $request -> status;
 
         $data -> save();
 
-        return redirect('/admin/category');
+        return redirect(route('admin.blog.index'));
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category, $id)
+    public function show(Blog $blog, $id)
     {
-        $data = Category::find($id);
+        $data = Blog::find($id);
 
-        return view('admin.category.show', [
+        return view('admin.blog.show', [
             'data' => $data
         ]);
     }
@@ -71,47 +79,55 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category, $id)
+    public function edit(Blog $blog, $id)
     {
-        $data = Category::find($id);
+        $data = Blog::find($id);
 
-        return view('admin.category.edit', [
-           'data' => $data
+        return view('admin.blog.edit', [
+            'data' => $data
         ]);
-
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category, $id)
+    public function update(Request $request, Blog $blog, $id)
     {
-        $data = Category::find($id);
+        $data = Blog::find($id);
 
-        $data -> parent_id = 0;
+        $data -> category_id = $request -> category_id;
+        $data -> user_id = 0; //$request -> user_id;
         $data -> title = $request -> title;
         $data -> keywords = $request -> keywords;
         $data -> description = $request -> description;
+        $data -> image = $request -> image;
+        $data -> detail = $request -> detail;
+        $data -> file = $request -> file;
+        $data -> likes = $request -> likes;
+        $data -> seen = $request -> seen;
+        $data -> read_time = $request -> read_time;
         $data -> status = $request -> status;
 
         $data -> save();
-        return redirect('/admin/category');
+
+        return redirect(route('admin.blog.index'));
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Blog $blog)
     {
         //
     }
