@@ -4,6 +4,7 @@ namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -29,7 +30,10 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('admin.blog.create');
+        $data = Category::all();
+        return view('admin.blog.create', [
+            'data' => $data
+        ]);
     }
 
     /**
@@ -50,14 +54,14 @@ class BlogController extends Controller
         $data -> image = $request -> image;
         $data -> detail = $request -> detail;
         $data -> file = $request -> file;
-        $data -> likes = $request -> likes;
-        $data -> seen = $request -> seen;
-        $data -> read_time = $request -> read_time;
+        $data -> likes = 0;
+        $data -> seen = 0;
+        $data -> read_time = strlen($request -> detail);
         $data -> status = $request -> status;
 
         $data -> save();
 
-        return redirect(route('admin.blog.index'));
+        return redirect('/admin/blog');
 
     }
 
@@ -85,9 +89,11 @@ class BlogController extends Controller
     public function edit(Blog $blog, $id)
     {
         $data = Blog::find($id);
+        $datalist = Category::all();
 
         return view('admin.blog.edit', [
-            'data' => $data
+            'data' => $data,
+            'datalist' => $datalist
         ]);
     }
 
@@ -117,7 +123,7 @@ class BlogController extends Controller
 
         $data -> save();
 
-        return redirect(route('admin.blog.index'));
+        return redirect('/admin/blog');
 
     }
 

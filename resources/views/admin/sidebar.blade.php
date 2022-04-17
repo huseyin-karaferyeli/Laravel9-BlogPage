@@ -113,7 +113,7 @@
 
         <!-- Blogs -->
         <li class="menu-item @if(request() -> path() == 'admin/blog') active @endif">
-            <a href="{{route('admin.index')}}" class="menu-link">
+            <a href="{{route('admin.blog.index')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bxl-blogger"></i>
                 <div data-i18n="Analytics">Blogs</div>
             </a>

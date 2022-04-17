@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPanel\BlogController;
 use App\Http\Controllers\AdminPanel\CategoryController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,17 @@ Route::prefix('admin') -> name('admin.') -> group(function (){
     //*************************** ADMIN CATEGORY ****************************
 
     Route::prefix('/category') -> name('category.') -> controller(CategoryController::class) -> group(function () {
+
+        Route::get('/', 'index') -> name('index');
+        Route::get('/create', 'create') -> name('create');
+        Route::post('/store', 'store') -> name('store');
+        Route::get('/edit/{id}', 'edit') -> name('edit');
+        Route::post('/update/{id}', 'update') -> name('update');
+        Route::get('/show/{id}', 'show') -> name('show');
+
+    });
+
+    Route::prefix('/blog') -> name('blog.') -> controller(BlogController::class) -> group(function () {
 
         Route::get('/', 'index') -> name('index');
         Route::get('/create', 'create') -> name('create');
