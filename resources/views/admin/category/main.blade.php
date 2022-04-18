@@ -27,23 +27,25 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>Image</th>
                     <th>Id</th>
+                    <th>Image</th>
+                    <th>Parent Category</th>
                     <th>Title</th>
                     <th>Status</th>
                     <th>Operations</th>
                 </tr>
                 </thead>
-                <tbody class="table-border-bottom-0">
+                <tbody class="table-border-bottom-0 ">
 
                 @foreach($data as $rs)
                     <tr>
+                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$rs -> id}}</strong></td>
                         <td>
-                            <div class="col-md-4">
-                                <img class="card-img" src="{{asset("assets")}}/admin/img/elements/2.jpg">
+                            <div class="avatar avatar-lg pull-up">
+                                <img class="img-circle" src="{{asset("assets")}}/admin/img/elements/2.jpg">
                             </div>
                         </td>
-                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$rs -> id}}</strong></td>
+                        <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs -> title)}}</td>
                         <td>{{$rs -> title}}</td>
                         <td>
                             @if($rs -> status == 'True')
@@ -64,7 +66,7 @@
                                     <button class="btn btn-outline-primary" >Show</button>
                                 </a>
 
-                                <a href="{{route('admin.category.index')}}">
+                                <a href="{{route('admin.category.delete', ['id' => $rs -> id])}}">
                                     <button class="btn btn-outline-danger" >Delete</button>
                                 </a>
                             </div>
