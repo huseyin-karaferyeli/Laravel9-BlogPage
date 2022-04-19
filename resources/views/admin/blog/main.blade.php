@@ -27,8 +27,9 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>Image</th>
                     <th>Id</th>
+                    <th>Image</th>
+                    <th>Category</th>
                     <th>Title</th>
                     <th>Status</th>
                     <th>Operations</th>
@@ -38,12 +39,13 @@
 
                 @foreach($data as $rs)
                     <tr>
+                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$rs -> id}}</strong></td>
                         <td>
-                            <div class="col-md-4">
-                                <img class="card-img" src="{{asset("assets")}}/admin/img/elements/2.jpg">
+                            <div class="avatar avatar-lg pull-up">
+                                <img class="img-circle" src="{{asset("assets")}}/admin/img/elements/2.jpg">
                             </div>
                         </td>
-                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$rs -> id}}</strong></td>
+                        <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs -> category, $rs -> category -> title)}}</td>
                         <td>{{$rs -> title}}</td>
                         <td>
                             @if($rs -> status == 'True')
@@ -64,7 +66,7 @@
                                     <button class="btn btn-outline-primary" >Show</button>
                                 </a>
 
-                                <a href="{{route('admin.blog.index')}}">
+                                <a href="{{route('admin.blog.delete', ['id' => $rs -> id])}}">
                                     <button class="btn btn-outline-danger" >Delete</button>
                                 </a>
                             </div>
@@ -93,15 +95,6 @@
                             </li>
                             <li class="page-item">
                                 <a class="page-link" href="javascript:void(0);">2</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="javascript:void(0);">3</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="javascript:void(0);">4</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="javascript:void(0);">5</a>
                             </li>
                             <li class="page-item next">
                                 <a class="page-link" href="javascript:void(0);"><i class="tf-icon bx bx-chevrons-right"></i></a>

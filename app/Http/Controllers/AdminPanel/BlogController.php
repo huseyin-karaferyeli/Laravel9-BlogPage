@@ -116,9 +116,6 @@ class BlogController extends Controller
         $data -> image = $request -> image;
         $data -> detail = $request -> detail;
         $data -> file = $request -> file;
-        $data -> likes = $request -> likes;
-        $data -> seen = $request -> seen;
-        $data -> read_time = $request -> read_time;
         $data -> status = $request -> status;
 
         $data -> save();

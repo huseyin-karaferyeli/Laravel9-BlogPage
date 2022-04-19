@@ -17,7 +17,7 @@
                         <a href="{{route('admin.blog.index')}}">Blogs</a>
                     </li>
 
-                    <li class="breadcrumb-item active">New Blog</li>
+                    <li class="breadcrumb-item active">Edit Blog</li>
                 </ol>
             </nav>
             <!-- Basic Breadcrumb -->
@@ -28,22 +28,24 @@
     <div class="col-xl">
         <div class="card mb-4">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h5 class="mb-0">New Blog</h5>
+                <h5 class="mb-0">{{$data -> title}}</h5>
                 <small class="text-muted float-end">Blogs</small>
             </div>
 
             <div class="card-body">
 
-                <form action="{{route('admin.blog.store')}}" method="post">
+                <form action="{{route('admin.blog.update', ['id' => $data -> id])}}" method="post">
                     @csrf
 
                     <div class="mb-3">
 
                         <label class="form-label">Category</label>
                         <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example" name="category_id">
-                            @foreach($data as $rs)
+                            @foreach($datalist as $rs)
 
-                                <option value="{{$rs -> id}}">{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs -> title)}}</option>
+                                <option value="{{$rs -> id}}" @if($rs -> id == $data -> category_id) selected="" @endif>
+                                    {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs -> title)}}
+                                </option>
 
                             @endforeach
                         </select>
@@ -52,27 +54,27 @@
 
                     <div class="mb-3">
                         <label class="form-label" for="basic-default-fullname">Title</label>
-                        <input type="text" class="form-control" id="basic-default-fullname" name="title" placeholder="Title">
+                        <input type="text" class="form-control" id="basic-default-fullname" name="title" value="{{$data -> title}}">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label" for="basic-default-company">Keywords</label>
-                        <input type="text" class="form-control" id="basic-default-company" name="keywords" placeholder="Keywords">
+                        <input type="text" class="form-control" id="basic-default-company" name="keywords" value="{{$data -> keywords}}">
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" placeholder="Description"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" >{{$data -> description}}</textarea>
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Detail</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="detail" placeholder="Detail"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="detail" >{{$data -> detail}}</textarea>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label" for="basic-default-company">File</label>
-                        <input type="text" class="form-control" id="basic-default-company" name="file" placeholder="File">
+                        <input type="text" class="form-control" id="basic-default-company" name="file" value="{{$data -> file}}">
                     </div>
 
                     <div class="demo-vertical-spacing demo-only-element mb-3">
@@ -87,8 +89,15 @@
 
                         <label class="form-label">Status</label>
                         <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example" name="status">
-                            <option value="True" selected>True</option>
-                            <option value="False">False</option>
+
+                            @if($data -> status == "True")
+                                <option value="True" selected>True</option>
+                                <option value="False">False</option>
+                            @else
+                                <option value="True">True</option>
+                                <option value="False" selected>False</option>
+                            @endif
+
                         </select>
 
                     </div>
