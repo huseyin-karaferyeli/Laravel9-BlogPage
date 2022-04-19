@@ -35,6 +35,16 @@
                 </tr>
 
                 <tr>
+                    <th><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Parent Category</strong></th>
+                    <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($data, $data -> title)}}</td>
+                </tr>
+
+                <tr>
+                    <th><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Title</strong></th>
+                    <td>{{$data -> title}}</td>
+                </tr>
+
+                <tr>
                     <th><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Keywords</strong></th>
                     <td>{{$data -> keywords}}</td>
                 </tr>
@@ -46,7 +56,13 @@
 
                 <tr>
                     <th><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Status</strong></th>
-                    <td>{{$data -> status}}</td>
+                    <td>
+                        @if($data -> status == 'True')
+                            <span class="badge bg-success">Active</span>
+                        @else
+                            <span class="badge bg-warning">Inactive</span>
+                        @endif
+                    </td>
                 </tr>
 
                 <tr>
@@ -59,6 +75,18 @@
                     <td>{{$data -> updated_at}}</td>
                 </tr>
             </table>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <div class="col-lg-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title">Image</h4>
+                    <img class="img-fluid d-flex mx-auto my-4" src="{{asset("assets")}}/admin/img/elements/2.jpg">
+                </div>
+            </div>
+
         </div>
     </div>
 

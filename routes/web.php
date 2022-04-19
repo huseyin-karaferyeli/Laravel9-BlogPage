@@ -33,7 +33,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::prefix('admin') -> name('admin.') -> group(function (){
     Route::get('/', [AdminController::class, 'index']) -> name('index');
 
-    //*************************** ADMIN CATEGORY ****************************
+    //*************************** CATEGORY ****************************
 
     Route::prefix('/category') -> name('category.') -> controller(CategoryController::class) -> group(function () {
 
@@ -46,6 +46,8 @@ Route::prefix('admin') -> name('admin.') -> group(function (){
         Route::get('/delete/{id}', 'destroy') -> name('delete');
 
     });
+
+    //*************************** BLOG ****************************
 
     Route::prefix('/blog') -> name('blog.') -> controller(BlogController::class) -> group(function () {
 
