@@ -32,8 +32,6 @@
                     @yield('content')
                 </div>
 
-                @include('admin.footer')
-
                 <div class="content-backdrop fade"></div>
             </div>
         </div>

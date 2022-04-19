@@ -103,7 +103,7 @@
                     </div>
 
                     <div class="card mt-4">
-                        <button class="btn btn-primary btn-lg " type="submit">Add New Blog</button>
+                        <button class="btn btn-primary btn-lg " type="submit">Update Blog</button>
                     </div>
                 </form>
             </div>
