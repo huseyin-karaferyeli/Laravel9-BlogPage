@@ -66,7 +66,7 @@
                                     <button class="btn btn-outline-primary" >Show</button>
                                 </a>
 
-                                <a href="{{route('admin.blog.delete', ['id' => $rs -> id])}}" onclick="return confirm('Are You Sure? You are deleting a category: {{$data -> title}}');">
+                                <a href="{{route('admin.blog.delete', ['id' => $rs -> id])}}" onclick="return confirm('Are You Sure? You are deleting a category: {{$rs -> title}}');">
                                     <button class="btn btn-outline-danger" >Delete</button>
                                 </a>
                             </div>

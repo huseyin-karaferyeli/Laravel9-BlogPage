@@ -78,17 +78,39 @@
         </div>
     </div>
 
+    <div class="card mb-4 demo-inline-spacing">
+        <div class="col-lg-12 pagination justify-content-center">
+
+            <div class="col-md-5 mb-4">
+
+                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-bs-target="#carouselExample" data-bs-slide-to="1" class="active" aria-current="true"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item carousel-item-next carousel-item-start">
+                            <img class="d-block w-100" src="@if($data -> image) {{Storage::url($data -> image)}}  @endif" alt="Second slide">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!--
     <div class="mb-4">
         <div class="col-lg-12">
             <div class="card h-100">
                 <div class="card-body">
                     <h4 class="card-title">Image</h4>
-                    <img class="img-fluid d-flex mx-auto my-4" src="{{asset("assets")}}/admin/img/elements/2.jpg">
+                    <img class="img-fluid d-flex mx-auto my-4" src="@if($data -> image) {{Storage::url($data -> image)}}  @endif">
                 </div>
             </div>
 
         </div>
-    </div>
+    </div>-->
 
     <div class="card">
         <div class="row">
@@ -102,7 +124,7 @@
             </div>
 
             <div class="col-xl">
-                <a href="{{route('admin.category.show', ['id' => $data -> id])}}">
+                <a href="{{route('admin.category.delete', ['id' => $data -> id])}}">
                     <div class="card m-4">
                         <button class="btn btn-danger btn-lg"
                                 onclick="return confirm('Are You Sure? You are deleting a category: {{$data -> title}}');"

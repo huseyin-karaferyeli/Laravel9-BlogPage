@@ -63,6 +63,11 @@ class CategoryController extends Controller
         $data -> title = $request -> title;
         $data -> keywords = $request -> keywords;
         $data -> description = $request -> description;
+
+        if($request -> file('image')){
+            $data -> image = $request -> file('image') -> store('images');
+        }
+
         $data -> status = $request -> status;
 
         $data -> save();
@@ -118,6 +123,12 @@ class CategoryController extends Controller
         $data -> title = $request -> title;
         $data -> keywords = $request -> keywords;
         $data -> description = $request -> description;
+
+        if($request -> file('image')){
+            Storage::delete($data -> image);
+            $data -> image = $request -> file('image') -> store('images');
+        }
+
         $data -> status = $request -> status;
 
         $data -> save();
@@ -133,7 +144,8 @@ class CategoryController extends Controller
     public function destroy(Category $category, $id)
     {
         $data = Category::find($id);
-        //Storage::delete($data -> image);
+        if($data -> image)
+            Storage::delete($data -> image);
         $data -> delete();
         return redirect('/admin/category');
     }

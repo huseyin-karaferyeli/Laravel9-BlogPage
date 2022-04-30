@@ -14,7 +14,7 @@
                     </li>
 
                     <li class="breadcrumb-item">
-                        <a href="{{route('admin.category.index')}}">Blogs</a>
+                        <a href="{{route('admin.blog.index')}}">Blogs</a>
                     </li>
 
                     <li class="breadcrumb-item active">{{$data -> title}}</li>

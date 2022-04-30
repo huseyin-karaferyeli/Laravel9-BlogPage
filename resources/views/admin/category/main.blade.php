@@ -42,7 +42,10 @@
                         <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$rs -> id}}</strong></td>
                         <td>
                             <div class="avatar avatar-lg pull-up">
-                                <img class="img-circle" src="{{asset("assets")}}/admin/img/elements/2.jpg">
+
+                                @if($rs -> image)
+                                    <img src="{{Storage::url($rs -> image)}}">
+                                @endif
                             </div>
                         </td>
                         <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs -> title)}}</td>
