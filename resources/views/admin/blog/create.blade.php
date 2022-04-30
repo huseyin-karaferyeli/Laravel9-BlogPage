@@ -1,5 +1,9 @@
 @extends('layouts.admin_layout')
 
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+@endsection
+
 @section('title', 'Blogger Admin Panel')
 
 @section('content')
@@ -67,8 +71,19 @@
 
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Detail</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="detail" placeholder="Detail"></textarea>
+                        <textarea class="form-control" id="detail" rows="3" name="detail" placeholder="Detail"></textarea>
                     </div>
+
+                    <script>
+                        ClassicEditor
+                            .create( document.querySelector( '#detail' ) )
+                            .then( editor => {
+                                console.log( editor );
+                            } )
+                            .catch( error => {
+                                console.error( error );
+                            } );
+                    </script>
 
                     <div class="mb-3">
                         <label class="form-label" for="basic-default-company">File</label>
@@ -100,5 +115,6 @@
             </div>
         </div>
     </div>
+
 
 @endsection

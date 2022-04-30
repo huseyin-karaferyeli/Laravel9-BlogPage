@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminPanel\BlogController;
 use App\Http\Controllers\AdminPanel\CategoryController;
+use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminController;
@@ -58,6 +59,18 @@ Route::prefix('admin') -> name('admin.') -> group(function (){
         Route::post('/update/{id}', 'update') -> name('update');
         Route::get('/show/{id}', 'show') -> name('show');
         Route::get('/delete/{id}', 'destroy') -> name('delete');
+
+    });
+
+    //*************************** BLOG IMAGE GALLERY ****************************
+
+    Route::prefix('/image') -> name('image.') -> controller(ImageController::class) -> group(function () {
+
+        Route::get('/{pid}', 'index') -> name('index');
+        Route::get('/create/{pid}', 'create') -> name('create');
+        Route::post('/store/{pid}', 'store') -> name('store');
+        Route::post('/update/{pid}/{id}', 'update') -> name('update');
+        Route::get('/delete/{pid}/{id}', 'destroy') -> name('delete');
 
     });
 });
