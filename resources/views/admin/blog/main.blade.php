@@ -32,6 +32,7 @@
                     <th>Category</th>
                     <th>Title</th>
                     <th>Status</th>
+                    <th>Gallery</th>
                     <th>Operations</th>
                 </tr>
                 </thead>
@@ -42,7 +43,9 @@
                         <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$rs -> id}}</strong></td>
                         <td>
                             <div class="avatar avatar-lg pull-up">
-                                <img class="img-circle" src="{{asset("assets")}}/admin/img/elements/2.jpg">
+                                @if($rs -> image)
+                                    <img src="{{Storage::url($rs -> image)}}">
+                                @endif
                             </div>
                         </td>
                         <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs -> category, $rs -> category -> title)}}</td>
@@ -53,6 +56,15 @@
                             @else
                                 <span class="badge bg-warning">Inactive</span>
                             @endif
+                        </td>
+
+                        <td>
+                            <a href="{{route('admin.image.index', ['pid' => $rs -> id])}}"
+                               class="menu-link"
+                               onclick="return !window.open(this.href, '', 'top=50 left=100 width=1100, height=700')">
+                                <i class="menu-icon tf-icons bx bx-images"></i>
+                                <div data-i18n="Analytics">Images</div>
+                            </a>
                         </td>
 
                         <td>

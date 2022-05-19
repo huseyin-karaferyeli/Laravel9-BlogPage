@@ -52,7 +52,11 @@ class BlogController extends Controller
         $data -> title = $request -> title;
         $data -> keywords = $request -> keywords;
         $data -> description = $request -> description;
-        $data -> image = $request -> image;
+
+        if($request -> file('image')){
+            $data -> image = $request -> file('image') -> store('images');
+        }
+
         $data -> detail = $request -> detail;
         $data -> file = $request -> file;
         $data -> likes = 0;
@@ -114,7 +118,12 @@ class BlogController extends Controller
         $data -> title = $request -> title;
         $data -> keywords = $request -> keywords;
         $data -> description = $request -> description;
-        $data -> image = $request -> image;
+
+        if($request -> file('image')){
+            //Storage::delete($data -> image);
+            $data -> image = $request -> file('image') -> store('images');
+        }
+
         $data -> detail = $request -> detail;
         $data -> file = $request -> file;
         $data -> status = $request -> status;
@@ -134,7 +143,8 @@ class BlogController extends Controller
     public function destroy(Blog $blog, $id)
     {
         $data = Blog::find($id);
-        //Storage::delete($data -> image);
+        if($data -> image)
+            Storage::delete($data -> image);
         $data -> delete();
         return redirect('/admin/blog');
     }

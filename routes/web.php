@@ -69,7 +69,8 @@ Route::prefix('admin') -> name('admin.') -> group(function (){
         Route::get('/{pid}', 'index') -> name('index');
         Route::get('/create/{pid}', 'create') -> name('create');
         Route::post('/store/{pid}', 'store') -> name('store');
-        Route::post('/update/{pid}/{id}', 'update') -> name('update');
+        Route::get('/detail/{pid}/{id}', 'detail') -> name('detail');
+        Route::get('/update/{pid}/{id}', 'update') -> name('update');
         Route::get('/delete/{pid}/{id}', 'destroy') -> name('delete');
 
     });

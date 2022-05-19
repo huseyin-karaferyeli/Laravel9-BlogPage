@@ -12,6 +12,7 @@
 
 <!-- Main JS -->
 <script src="{{asset("assets/admin")}}/js/main.js"></script>
+<script src="{{asset("assets/admin")}}/js/modals.js"></script>
 
 <!-- Page JS -->
 

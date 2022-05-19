@@ -38,7 +38,7 @@
 
             <div class="card-body">
 
-                <form action="{{route('admin.blog.update', ['id' => $data -> id])}}" method="post">
+                <form action="{{route('admin.blog.update', ['id' => $data -> id])}}" method="post" enctype="multipart/form-data">
                     @csrf
 
                     <div class="mb-3">
@@ -95,7 +95,7 @@
                     <div class="demo-vertical-spacing demo-only-element mb-3">
                         <label class="form-label" for="basic-default-company">Image</label>
                         <div class="input-group">
-                            <input type="file" class="form-control" id="inputGroupFile02">
+                            <input type="file" class="form-control" id="inputGroupFile02" name="image">
                             <label class="input-group-text" for="inputGroupFile02">Upload</label>
                         </div>
                     </div>

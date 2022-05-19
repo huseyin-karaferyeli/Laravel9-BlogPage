@@ -125,7 +125,7 @@ class CategoryController extends Controller
         $data -> description = $request -> description;
 
         if($request -> file('image')){
-            Storage::delete($data -> image);
+            //Storage::delete($data -> image);
             $data -> image = $request -> file('image') -> store('images');
         }
 
