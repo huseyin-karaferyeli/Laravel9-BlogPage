@@ -28,16 +28,6 @@ class ImageController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create($pid)
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -56,46 +46,6 @@ class ImageController extends Controller
         $data -> save();
 
         return redirect() -> route('admin.image.index', ['pid' => $pid]);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $pid, $id)
-    {
-        $data = Image::find($id);
-
-        if($data -> image && Storage::disk('public') -> exists($data -> image)){
-            Storage::delete($data -> image);
-        }
-
-        return view('admin.Image.edit', ['blog' => $data]);
     }
 
     /**

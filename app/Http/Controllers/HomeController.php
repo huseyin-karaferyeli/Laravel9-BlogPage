@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
-{
+class HomeController extends Controller{
     public function home(){
-        return view('home.main', ['where' => 'main']);
+        $sliderdata = Blog::limit(4) -> get();
+        return view('home.main', [
+            'where' => 'main',
+            'sliderdata' => $sliderdata
+        ]);
     }
 
     public function contact(){
