@@ -9,76 +9,47 @@
 @section('content')
 
     <div class="container-wrap">
-        <div id="fh5co-services">
-            <div class="row">
-                <div class="col-md-4 text-center animate-box">
-                    <div class="services">
-						<span class="icon">
-							<i class="icon-diamond"></i>
-						</span>
-                        <div class="desc">
-                            <h3><a href="#">Brand Identity</a></h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center animate-box">
-                    <div class="services">
-						<span class="icon">
-							<i class="icon-lab2"></i>
-						</span>
-                        <div class="desc">
-                            <h3><a href="#">Web Design &amp; UI</a></h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center animate-box">
-                    <div class="services">
-						<span class="icon">
-							<i class="icon-settings"></i>
-						</span>
-                        <div class="desc">
-                            <h3><a href="#">Web Development</a></h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div id="fh5co-work" class="fh5co-light-grey">
             <div class="row animate-box">
                 <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-                    <h2>Work</h2>
-                    <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                    <h2>Top Categories</h2>
                 </div>
             </div>
+
             <div class="row">
-                <div class="col-md-4 text-center animate-box">
-                    <a href="work-single.html" class="work"  style="background-image: url({{asset("assets")}}/images/pic5.jpg);">
-                        <div class="desc">
-                            <h3>Project Name</h3>
-                            <span>Illustration</span>
+                @foreach($categories as $category)
+                    <div class="col-md-4 text-center animate-box">
+                        <a href="work-single.html" class="work"  style="background-image: url({{Storage::url($category -> image)}});">
+                            <div class="desc">
+                                <h3>{{$category -> title}}</h3>
+                                <span>{{$category -> description}}</span>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+        <div id="fh5co-blog">
+            <div class="row">
+                @foreach($blogData as $blog)
+                    <div class="col-md-4">
+                        <div class="fh5co-blog animate-box">
+                            <a href="#" class="blog-bg" style="background-image: url({{Storage::url($blog -> image)}});"></a>
+                            <div class="blog-text">
+                                <span class="posted_on">{{$blog -> created_at}}</span>
+                                <h3><a href="#">{{$blog -> title}}</a></h3>
+                                <p>{{$blog -> description}}</p>
+                                <ul class="stuff">
+                                    <li><i class="icon-heart3"></i>{{$blog -> likes}}</li>
+                                    <li><i class="icon-eye2"></i>{{$blog -> seen}}</li>
+                                    <li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
-                    </a>
-                </div>
-                <div class="col-md-4 text-center animate-box">
-                    <a href="work-single.html" class="work" style="background-image: url({{asset("assets")}}/images/pic3.jpg);">
-                        <div class="desc">
-                            <h3>Project Name</h3>
-                            <span>Brading</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 text-center animate-box">
-                    <a href="work-single.html" class="work" style="background-image: url({{asset("assets")}}/images/portfolio-3.jpg);">
-                        <div class="desc">
-                            <h3>Project Name</h3>
-                            <span>Illustration</span>
-                        </div>
-                    </a>
-                </div>
+                    </div>
+                @endforeach
             </div>
         </div>
 
