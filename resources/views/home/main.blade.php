@@ -36,7 +36,7 @@
                 @foreach($blogData as $blog)
                     <div class="col-md-4">
                         <div class="fh5co-blog animate-box">
-                            <a href="#" class="blog-bg" style="background-image: url({{Storage::url($blog -> image)}});"></a>
+                            <a href="{{Route('detail', ['id' => $blog -> id])}}" class="blog-bg" style="background-image: url({{Storage::url($blog -> image)}});"></a>
                             <div class="blog-text">
                                 <span class="posted_on">{{$blog -> created_at}}</span>
                                 <h3><a href="#">{{$blog -> title}}</a></h3>
@@ -44,7 +44,7 @@
                                 <ul class="stuff">
                                     <li><i class="icon-heart3"></i>{{$blog -> likes}}</li>
                                     <li><i class="icon-eye2"></i>{{$blog -> seen}}</li>
-                                    <li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
+                                    <li><a href="{{Route('detail', ['id' => $blog -> id])}}">Read More<i class="icon-arrow-right22"></i></a></li>
                                 </ul>
                             </div>
                         </div>

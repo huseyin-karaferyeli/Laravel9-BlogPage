@@ -24,6 +24,12 @@ Route::get('/contact', [HomeController::class, 'contact']) -> name('contact');
 
 Route::get('/blog', [HomeController::class, 'blog']) -> name('blog');
 
+Route::get('/detail/{id}', [HomeController::class, 'detail']) -> name('detail');
+
+Route::get('/category/{id}', [HomeController::class, 'category']) -> name('category');
+
+Route::get('/like/{id}', [HomeController::class, 'like']) -> name('like');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
