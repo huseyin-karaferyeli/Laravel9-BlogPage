@@ -12,7 +12,7 @@
                                 <div class="slider-text-inner">
                                     <h1>{{$slide -> title}}</h1>
                                     <h2>{{$slide -> description}}</h2>
-                                    <p><a class="btn btn-primary btn-demo" href="#"></i> Read More</a> <a class="btn btn-primary btn-learn">Save</a></p>
+                                    <p><a class="btn btn-primary btn-demo" href="{{route('detail', ['id' => $slide -> id])}}"></i> Read More</a> <a class="btn btn-primary btn-learn">Save</a></p>
                                 </div>
                             </div>
                         </div>

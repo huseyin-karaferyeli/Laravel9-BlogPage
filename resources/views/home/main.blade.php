@@ -20,7 +20,7 @@
             <div class="row">
                 @foreach($categories as $category)
                     <div class="col-md-4 text-center animate-box">
-                        <a href="work-single.html" class="work"  style="background-image: url({{Storage::url($category -> image)}});">
+                        <a href="{{route('category', ['id' => $category -> id, 'slug' => $category -> title])}}" class="work"  style="background-image: url({{Storage::url($category -> image)}});">
                             <div class="desc">
                                 <h3>{{$category -> title}}</h3>
                                 <span>{{$category -> description}}</span>

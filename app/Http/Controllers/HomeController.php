@@ -31,13 +31,16 @@ class HomeController extends Controller{
         }
     }
 
+    public static function mainCategoryList(){
+        return Category::where('parentId', 0) -> get();
+    }
+
     public function home(){
         $sliderdata = Blog::limit(4) -> get();
         $blogData = Blog::limit(6) -> get();
         $categories = Category::limit(3) -> get();
 
         return view('home.main', [
-            'where' => 'main',
             'sliderdata' => $sliderdata,
             'blogData' => $blogData,
             'categories' => $categories
@@ -53,7 +56,6 @@ class HomeController extends Controller{
         $data -> save();
 
         return view('home.detail', [
-            'where' => 'detail',
             'data' => $data,
             'gallery' => $gallery
         ]);
@@ -69,21 +71,26 @@ class HomeController extends Controller{
         return redirect() -> route('detail', ['id' => $id]);
     }
 
-    public function category($id){
+    private function getBlogsFromCategory($id){
+        $blogs = DB::table('blogs') -> where('category_id', $id) -> get();
+
+        //Hocaya sor!!!
+    }
+
+    public function category($id, $slug){
 
         $blogs = DB::table('blogs') -> where('category_id', $id) -> get();
 
         return view('home.category', [
-            'where' => 'categoryDetail',
             'blogs' => $blogs
         ]);
     }
 
     public function contact(){
-        return view('home.contact', ['where' => 'contact']);
+        return view('home.contact');
     }
 
     public function blog(){
-        return view('home.blog', ['where' => 'blog']);
+        return view('home.blog');
     }
 }
