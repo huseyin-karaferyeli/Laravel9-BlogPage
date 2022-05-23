@@ -38,7 +38,7 @@ class HomeController extends Controller{
     public function home(){
         $sliderdata = Blog::limit(4) -> get();
         $blogData = Blog::limit(6) -> get();
-        $categories = Category::limit(3) -> get();
+        $categories = Category::limit(6) -> get();
 
         return view('home.main', [
             'sliderdata' => $sliderdata,
@@ -77,20 +77,18 @@ class HomeController extends Controller{
         //Hocaya sor!!!
     }
 
-    public function category($id, $slug){
+    public function category($id){
 
+        $category = Category::find($id);
         $blogs = DB::table('blogs') -> where('category_id', $id) -> get();
 
         return view('home.category', [
+            'category' => $category,
             'blogs' => $blogs
         ]);
     }
 
     public function contact(){
         return view('home.contact');
-    }
-
-    public function blog(){
-        return view('home.blog');
     }
 }

@@ -22,8 +22,6 @@ Route::get('/', [HomeController::class, 'home']) -> name('home');
 
 Route::get('/contact', [HomeController::class, 'contact']) -> name('contact');
 
-Route::get('/blog', [HomeController::class, 'blog']) -> name('blog');
-
 Route::get('/detail/{id}', [HomeController::class, 'detail']) -> name('detail');
 
 Route::get('/category/{id}/{slug}', [HomeController::class, 'category']) -> name('category');

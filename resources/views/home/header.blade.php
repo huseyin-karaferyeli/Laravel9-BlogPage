@@ -31,7 +31,6 @@
                             </li>
                         @endforeach
                         <li> | </li>
-                        <li @if(request() -> path() == 'about')class="active"@endif><a href="about.html">About</a></li>
                         <li @if(request() -> path() == 'contact')class="active"@endif><a href={{route('contact')}}>Contact</a></li>
 
                     </ul>

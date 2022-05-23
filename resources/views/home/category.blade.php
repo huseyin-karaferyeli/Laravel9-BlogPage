@@ -1,10 +1,25 @@
 @extends('layouts.main_layout')
 
-@section('title', 'Blog Page')
+@section('title', $category -> title . ' Blogs')
 
 @section('content')
 
     <div class="container-wrap">
+        <div class="animated col-md-pull-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{{route('home')}}">Home</a>
+                    </li>
+
+                    <li class="breadcrumb-item active">{{$category -> title}}</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="animated col-md-12 text-right">
+            <h1>{{$category -> title}}</h1>
+        </div>
 
         <div id="fh5co-blog">
             <div class="row">

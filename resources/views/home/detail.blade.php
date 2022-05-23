@@ -14,7 +14,7 @@
                     </li>
 
                     <li class="breadcrumb-item ">
-                        <a href="{{route('category', ['id' => $data -> category -> id])}}">{{$data -> category -> title}}</a>
+                        <a href="{{route('category', ['id' => $data -> category -> id, 'slug' => $data -> title])}}">{{$data -> category -> title}}</a>
                     </li>
 
                     <li class="breadcrumb-item active">{{$data -> title}}</li>
