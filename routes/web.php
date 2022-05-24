@@ -38,6 +38,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::prefix('admin') -> name('admin.') -> group(function (){
     Route::get('/', [AdminController::class, 'index']) -> name('index');
 
+    Route::get('/settings', [AdminController::class, 'setting']) -> name('setting');
+    Route::post('/settings/update', [AdminController::class, 'settingUpdate']) -> name('setting.update');
+
     //*************************** CATEGORY ****************************
 
     Route::prefix('/category') -> name('category.') -> controller(CategoryController::class) -> group(function () {

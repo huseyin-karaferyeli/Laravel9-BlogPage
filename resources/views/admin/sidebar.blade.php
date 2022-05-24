@@ -82,7 +82,7 @@
 
         <!-- Settings -->
         <li class="menu-item @if(request() -> path() == 'admin/settings') active @endif">
-            <a href="{{route('admin.index')}}" class="menu-link">
+            <a href="{{route('admin.setting')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-cog"></i>
                 <div data-i18n="Analytics">Settings</div>
             </a>

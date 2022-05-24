@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Image;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -39,9 +40,11 @@ class HomeController extends Controller{
         $sliderdata = Blog::limit(4) -> get();
         $blogData = Blog::limit(6) -> get();
         $categories = Category::limit(6) -> get();
+        $settings = Setting::first();
 
         return view('home.main', [
             'sliderdata' => $sliderdata,
+            'settings' => $settings,
             'blogData' => $blogData,
             'categories' => $categories
         ]);
