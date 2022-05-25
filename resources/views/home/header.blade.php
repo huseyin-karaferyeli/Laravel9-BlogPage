@@ -31,9 +31,27 @@
                             </li>
                         @endforeach
                         <li> | </li>
-                        <li @if(request() -> path() == 'contact')class="active"@endif><a href={{route('contact')}}>Contact</a></li>
-                        <li @if(request() -> path() == 'about')class="active"@endif><a href={{route('about')}}>About</a></li>
-                        <li @if(request() -> path() == 'references')class="active"@endif><a href={{route('references')}}>References</a></li>
+
+                        <li
+                            @if(request() -> path() == 'faq')
+                                class="active has-dropdown"
+                            @elseif(request() -> path() == 'contact')
+                                class="active has-dropdown"
+                            @elseif(request() -> path() == 'about')
+                                class="active has-dropdown"
+                            @elseif(request() -> path() == 'references')
+                                class="active has-dropdown"
+                            @else
+                                class="has-dropdown"
+                            @endif>
+                            <a>Blog Page</a>
+                            <ul class="dropdown">
+                                <li><a href={{route('faq')}}>FAQ</a></li>
+                                <li><a href={{route('contact')}}>Contact</a></li>
+                                <li><a href={{route('about')}}>About</a></li>
+                                <li><a href={{route('references')}}>References</a></li>
+                            </ul>
+                        </li>
 
                     </ul>
                 </div>

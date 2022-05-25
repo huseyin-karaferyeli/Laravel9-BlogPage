@@ -90,7 +90,7 @@
 
         <!-- FAQ -->
         <li class="menu-item @if(request() -> path() == 'admin/faq') active @endif">
-            <a href="{{route('admin.index')}}" class="menu-link">
+            <a href="{{route('admin.faq.index')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-question-mark"></i>
                 <div data-i18n="Analytics">FAQs</div>
             </a>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Faq;
 use App\Models\Image;
 use App\Models\Message;
 use App\Models\Setting;
@@ -131,6 +132,16 @@ class HomeController extends Controller{
 
         return view('home.references', [
             'settings' => $setting
+        ]);
+    }
+
+    public function faq(){
+        $setting = Setting::first();
+        $faqs = Faq::all();
+
+        return view('home.faq', [
+            'settings' => $setting,
+            'faqs' => $faqs
         ]);
     }
 }
