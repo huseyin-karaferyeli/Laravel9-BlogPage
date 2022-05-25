@@ -21,6 +21,8 @@ use App\Http\Controllers\AdminPanel\HomeController as AdminController;
 Route::get('/', [HomeController::class, 'home']) -> name('home');
 
 Route::get('/contact', [HomeController::class, 'contact']) -> name('contact');
+Route::get('/about', [HomeController::class, 'about']) -> name('about');
+Route::get('/references', [HomeController::class, 'references']) -> name('references');
 
 Route::get('/detail/{id}', [HomeController::class, 'detail']) -> name('detail');
 

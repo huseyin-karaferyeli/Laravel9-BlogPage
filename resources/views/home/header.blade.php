@@ -32,6 +32,8 @@
                         @endforeach
                         <li> | </li>
                         <li @if(request() -> path() == 'contact')class="active"@endif><a href={{route('contact')}}>Contact</a></li>
+                        <li @if(request() -> path() == 'about')class="active"@endif><a href={{route('about')}}>About</a></li>
+                        <li @if(request() -> path() == 'references')class="active"@endif><a href={{route('references')}}>References</a></li>
 
                     </ul>
                 </div>

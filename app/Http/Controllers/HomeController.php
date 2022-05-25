@@ -91,7 +91,29 @@ class HomeController extends Controller{
         ]);
     }
 
+
+
     public function contact(){
-        return view('home.contact');
+        $setting = Setting::first();
+
+        return view('home.contact', [
+            'settings' => $setting
+        ]);
+    }
+
+    public function about(){
+        $setting = Setting::first();
+
+        return view('home.about', [
+            'settings' => $setting
+        ]);
+    }
+
+    public function references(){
+        $setting = Setting::first();
+
+        return view('home.references', [
+            'settings' => $setting
+        ]);
     }
 }
