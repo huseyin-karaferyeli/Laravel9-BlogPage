@@ -134,8 +134,8 @@
         </li>
 
         <!-- Messages -->
-        <li class="menu-item @if(request() -> path() == 'admin/messages') active @endif">
-            <a href="{{route('admin.index')}}" class="menu-link">
+        <li class="menu-item @if(request() -> path() == 'admin/message') active @endif">
+            <a href="{{route('admin.message.index')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-message"></i>
                 <div data-i18n="Analytics">Messages</div>
             </a>
