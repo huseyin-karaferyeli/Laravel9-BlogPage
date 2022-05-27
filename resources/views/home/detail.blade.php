@@ -111,7 +111,10 @@
 
             <div class="row animate-box fadeInUp animated-fast">
                 <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-                    <h1>Comments</h1>
+                    <h1>{{$data -> comments -> count('id')}} Comments</h1>
+                </div>
+                <div class="text-left">
+                    <p>Average {{$data -> comments -> average('rate')}} Rate</p>
                 </div>
             </div>
 

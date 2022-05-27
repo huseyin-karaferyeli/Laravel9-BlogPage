@@ -44,6 +44,12 @@
                                 <span class="posted_on">{{$blog -> created_at}}</span>
                                 <h3><a href="#">{{$blog -> title}}</a></h3>
                                 <p>{{$blog -> description}}</p>
+                                <p>{{$blog -> comments -> count('id')}} Comments | Average
+                                    @if($blog -> comments -> average('rate') != null)
+                                        {{$blog -> comments -> average('rate')}} Rate
+                                    @else
+                                        No Rate
+                                    @endif</p>
                                 <ul class="stuff">
                                     <li><i class="icon-heart3"></i>{{$blog -> likes}}</li>
                                     <li><i class="icon-eye2"></i>{{$blog -> seen}}</li>
