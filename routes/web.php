@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminPanel\BlogController;
 use App\Http\Controllers\AdminPanel\CategoryController;
+use App\Http\Controllers\AdminPanel\CommentController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\MessageController;
@@ -24,6 +25,7 @@ Route::get('/', [HomeController::class, 'home']) -> name('home');
 
 Route::get('/contact', [HomeController::class, 'contact']) -> name('contact');
 Route::post('/storemessage', [HomeController::class, 'storemessage']) -> name('storemessage');
+Route::post('/storecomment', [HomeController::class, 'storecomment']) -> name('storecomment');
 Route::get('/about', [HomeController::class, 'about']) -> name('about');
 Route::get('/references', [HomeController::class, 'references']) -> name('references');
 Route::get('/detail/{id}', [HomeController::class, 'detail']) -> name('detail');
@@ -105,6 +107,17 @@ Route::prefix('admin') -> name('admin.') -> group(function (){
         Route::post('/update/{id}', 'update') -> name('update');
         Route::get('/show/{id}', 'show') -> name('show');
         Route::get('/delete/{id}', 'destroy') -> name('delete');
+
+    });
+
+    //*************************** COMMENTS ****************************
+
+    Route::prefix('/comments') -> name('comments.') -> controller(CommentController::class) -> group(function () {
+
+        Route::get('/', 'index') -> name('index');
+        Route::get('/show/{id}', 'show') -> name('show');
+        Route::get('/delete/{id}', 'destroy') -> name('delete');
+        Route::get('/update/{id}', 'update') -> name('update');
 
     });
 });

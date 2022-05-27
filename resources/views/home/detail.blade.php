@@ -107,9 +107,70 @@
             <div class="row">
                 <p><br><i class="icon-tag"></i> ~ {{$data -> keywords}}</p>
             </div>
+            <br><br>
+
+            <div class="row animate-box fadeInUp animated-fast">
+                <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+                    <h1>Comments</h1>
+                </div>
+            </div>
+
+            <div class="col-md-10 col-md-push-1 animate-box fadeInUp animated-fast">
+                <div class="row">
+                    @foreach($comments as $comment)
+                        <li>
+                            <h4>{{$comment -> user -> name}} |
+                                @if($comment -> rate == 0 || $comment -> rate == 1)
+                                    {{$comment -> rate}} Star
+                                @else
+                                    {{$comment -> rate}} Stars
+                                @endif</h4>
+                            <p>
+                                {{$comment -> comment}}
+                            </p>
+                        </li><br><br>
+                    @endforeach
+                </div>
+            </div>
+
+            <div class="row">
+
+                <form method="post" action="{{route('storecomment')}}">
+                    @csrf
+                    <div class="col-md-10 col-md-push-1 animate-box fadeInUp animated-fast">
+                        <div class="row">
+                            <div class="col-md-12">
+                                @include('home.reply')
+                            </div>
+
+                            <input type="hidden" name="blog_id" value="{{$data -> id}}">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="rate_val">How Useful Was It </label>
+                                    <input type="range" id="rate_val" name="rate" min="0" max="5" value="0">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea name="comment" class="form-control" id="" cols="30" rows="3" placeholder="Comment"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    @auth
+                                        <input type="submit" value="Send Message" class="btn btn-primary btn-modify">
+                                    @else
+                                        <a href="/login" class="btn btn-primary btn-modify">Please Login</a>
+                                    @endauth
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
 
         </div>
-
     </div>
 
 @endsection

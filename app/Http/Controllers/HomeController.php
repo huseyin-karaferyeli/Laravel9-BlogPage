@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\Image;
 use App\Models\Message;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller{
@@ -55,6 +57,7 @@ class HomeController extends Controller{
     public function detail($id){
         $data = Blog::find($id);
         $gallery = DB::table('images') -> where('blog_id', $id) -> get();
+        $comments = Comment::where('blog_id', $id) -> where('status', 'True') -> get();
 
         $data -> seen = $data -> seen + 1;
 
@@ -62,7 +65,8 @@ class HomeController extends Controller{
 
         return view('home.detail', [
             'data' => $data,
-            'gallery' => $gallery
+            'gallery' => $gallery,
+            'comments' => $comments
         ]);
     }
 
@@ -117,6 +121,20 @@ class HomeController extends Controller{
         $data -> save();
 
         return redirect() -> route('contact') -> with('info', 'Your Message Has Been Sent, Thank You');
+    }
+
+    public function storecomment(Request $request){
+        $comment = new Comment();
+
+        $comment -> comment = $request -> input('comment');
+        $comment -> rate = $request -> input('rate');
+        $comment -> blog_id = $request -> input('blog_id');
+        $comment -> user_id = Auth::id();
+        $comment -> ip = request() -> ip();
+
+        $comment -> save();
+
+        return redirect() -> route('detail', ['id' => $request -> blog_id]) -> with('info', 'Your Comment Has Been Sent');
     }
 
     public function about(){

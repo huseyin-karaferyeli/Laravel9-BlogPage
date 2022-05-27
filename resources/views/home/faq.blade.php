@@ -8,8 +8,16 @@
 @section('content')
 
     <div class="container-wrap">
+
         <div id="fh5co-blog">
-            <div class="panel-group" id="accordion">
+
+            <div class="row animate-box fadeInUp animated-fast">
+                <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+            </div>
+
+            <div class="panel-group animate-box fadeInUp animated-fast" id="accordion">
 
                 @foreach($faqs as $faq)
 

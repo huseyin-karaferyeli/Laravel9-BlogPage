@@ -14,10 +14,8 @@
             </div>
         </div>
         <div class="row animate-box fadeInUp animated-fast">
-            <div class="row col-md-12 text-center heading-section">
-                <div class="col-md-3">
-                    {!! $settings -> references !!}
-                </div>
+            <div class="col-md-12 text-center heading-section">
+                {!! $settings -> references !!}
             </div>
             </div>
         </div>

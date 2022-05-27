@@ -143,7 +143,7 @@
 
         <!-- Comments -->
         <li class="menu-item @if(request() -> path() == 'admin/comments') active @endif">
-            <a href="{{route('admin.index')}}" class="menu-link">
+            <a href="{{route('admin.comments.index')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-comment"></i>
                 <div data-i18n="Analytics">Comments</div>
             </a>
