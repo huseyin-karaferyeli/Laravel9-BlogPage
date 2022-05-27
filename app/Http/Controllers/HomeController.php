@@ -162,4 +162,13 @@ class HomeController extends Controller{
             'faqs' => $faqs
         ]);
     }
+
+    public function logoutuser(Request $request){
+        Auth::logout();
+
+        $request -> session() -> invalidate();
+        $request -> session() -> regenerateToken();
+
+        return redirect() -> route('home');
+    }
 }

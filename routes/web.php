@@ -32,6 +32,9 @@ Route::get('/detail/{id}', [HomeController::class, 'detail']) -> name('detail');
 Route::get('/category/{id}/{slug}', [HomeController::class, 'category']) -> name('category');
 Route::get('/like/{id}', [HomeController::class, 'like']) -> name('like');
 Route::get('/faq', [HomeController::class, 'faq']) -> name('faq');
+Route::view('/loginuser', 'home.login') -> name('loginuser');
+Route::view('/registeruser', 'home.register') -> name('registeruser');
+Route::get('/logoutuser', [HomeController::class, 'logoutuser']) -> name('logoutuser');//controller
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

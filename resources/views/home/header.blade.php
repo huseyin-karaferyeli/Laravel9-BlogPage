@@ -53,6 +53,23 @@
                             </ul>
                         </li>
 
+                        @auth
+                            <li>
+                                <a href="#">{{Auth::user() -> name}}</a>
+                                <a href="{{route('logoutuser')}}">Logout</a>
+                            </li>
+
+                        @endauth
+                        @guest
+                            <li>
+                                <a href="{{route('loginuser')}}">Login</a>
+                            </li>
+
+                            <li>
+                                <a href="{{route('registeruser')}}">Register</a>
+                            </li>
+                        @endguest
+
                     </ul>
                 </div>
             </div>
