@@ -36,6 +36,9 @@ Route::view('/loginuser', 'home.login') -> name('loginuser');
 Route::view('/registeruser', 'home.register') -> name('registeruser');
 Route::get('/logoutuser', [HomeController::class, 'logoutuser']) -> name('logoutuser');//controller
 
+Route::view('/loginadmin', 'admin.login') -> name('loginadmin');
+Route::post('/loginadmincheck', [HomeController::class, 'loginadmincheck']) -> name('loginadmincheck');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

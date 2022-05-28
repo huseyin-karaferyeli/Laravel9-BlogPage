@@ -25,10 +25,9 @@
 
         <div class="layout-page">
 
-            @include('admin.header')
-
             <div class="container-wrapper">
                 <div class="container-xxl flex-grow-1 container-p-y">
+                    @include('admin.header')
                     @yield('content')
                 </div>
 

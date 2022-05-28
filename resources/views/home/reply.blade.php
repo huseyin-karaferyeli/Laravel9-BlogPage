@@ -6,6 +6,6 @@
 
 @if($errors -> any())
     <div class="col-md-12 breadcrumb">
-        Something Went Wrong :/
+        Something Went Wrong :/{{$errors}}
     </div>
 @endif
