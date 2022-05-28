@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPanel\AdminUserConroller;
 use App\Http\Controllers\AdminPanel\BlogController;
 use App\Http\Controllers\AdminPanel\CategoryController;
 use App\Http\Controllers\AdminPanel\CommentController;
@@ -123,6 +124,19 @@ Route::prefix('admin') -> name('admin.') -> group(function (){
         Route::get('/', 'index') -> name('index');
         Route::get('/show/{id}', 'show') -> name('show');
         Route::get('/delete/{id}', 'destroy') -> name('delete');
+        Route::get('/update/{id}', 'update') -> name('update');
+
+    });
+
+    //*************************** USERS ****************************
+
+    Route::prefix('/user') -> name('user.') -> controller(AdminUserConroller::class) -> group(function () {
+
+        Route::get('/', 'index') -> name('index');
+        Route::get('/show/{id}', 'show') -> name('show');
+        Route::post('/addrole/{id}', 'addrole') -> name('addrole');
+        Route::get('/delete/{id}', 'destroy') -> name('delete');
+        Route::get('/deleterole/{uid}/{rid}', 'deleterole') -> name('deleterole');
         Route::get('/update/{id}', 'update') -> name('update');
 
     });

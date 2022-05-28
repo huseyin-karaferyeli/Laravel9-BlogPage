@@ -135,8 +135,8 @@
         </li>
 
         <!-- Users -->
-        <li class="menu-item @if(request() -> path() == 'admin/users') active @endif">
-            <a href="{{route('admin.index')}}" class="menu-link">
+        <li class="menu-item @if(request() -> path() == 'admin/user') active @endif">
+            <a href="{{route('admin.user.index')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
                 <div data-i18n="Analytics">Users</div>
             </a>
