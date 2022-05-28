@@ -47,7 +47,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 //*************************** ADMIN ****************************
 
-Route::prefix('admin') -> name('admin.') -> group(function (){
+Route::middleware('admin') -> prefix('admin') -> name('admin.') -> group(function (){
     Route::get('/', [AdminController::class, 'index']) -> name('index');
 
     Route::get('/settings', [AdminController::class, 'setting']) -> name('setting');
