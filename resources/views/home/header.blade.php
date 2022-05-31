@@ -54,11 +54,7 @@
                         </li>
 
                         @auth
-                            <li>
-                                <a href="#">{{Auth::user() -> name}}</a>
-                                <a href="{{route('logoutuser')}}">Logout</a>
-                            </li>
-
+                            @include('home.user.usermenu')
                         @endauth
                         @guest
                             <li>
