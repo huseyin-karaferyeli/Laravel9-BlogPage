@@ -48,7 +48,7 @@ class BlogController extends Controller
         $data = new Blog();
 
         $data -> category_id = $request -> category_id;
-        $data -> user_id = 0; //$request -> user_id;
+        $data -> user_id = $request -> user_id;
         $data -> title = $request -> title;
         $data -> keywords = $request -> keywords;
         $data -> description = $request -> description;
@@ -114,7 +114,7 @@ class BlogController extends Controller
         $data = Blog::find($id);
 
         $data -> category_id = $request -> category_id;
-        $data -> user_id = 0; //$request -> user_id;
+        $data -> user_id = $request -> user_id;
         $data -> title = $request -> title;
         $data -> keywords = $request -> keywords;
         $data -> description = $request -> description;

@@ -40,7 +40,7 @@
 
                 <form action="{{route('admin.blog.update', ['id' => $data -> id])}}" method="post" enctype="multipart/form-data">
                     @csrf
-
+                    <input type="hidden" name="user_id" value="{{$data -> user_id}}">
                     <div class="mb-3">
 
                         <label class="form-label">Category</label>

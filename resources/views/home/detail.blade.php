@@ -107,14 +107,19 @@
             <div class="row">
                 <p><br><i class="icon-tag"></i> ~ {{$data -> keywords}}</p>
             </div>
+
+            <div class="row">
+                <p><br>Author ~ {{$data -> user -> name}}</p>
+            </div>
+
             <br><br>
 
             <div class="row animate-box fadeInUp animated-fast">
                 <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-                    <h1>{{$data -> comments -> count('id')}} Comments</h1>
+                    <h1>{{$comments -> count('id')}} Comments</h1>
                 </div>
                 <div class="text-left">
-                    <p>Average {{$data -> comments -> average('rate')}} Rate</p>
+                    <p>Average {{$comments -> average('rate')}} Rate</p>
                 </div>
             </div>
 

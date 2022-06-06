@@ -46,10 +46,6 @@
                         <td>
 
                             <div class="demo-inline-spacing">
-                                <a href="{{route('admin.message.update', ['id' => $rs -> id])}}">
-                                    <button class="btn btn-outline-success" >Edit</button>
-                                </a>
-
                                 <a href="{{route('admin.message.show', ['id' => $rs -> id])}}" onclick="return !window.open(this.href, '', 'top=50 left=100 width=1100, height=700')">
                                     <button class="btn btn-outline-primary" >Show</button>
                                 </a>

@@ -23,7 +23,7 @@
 
             <div class="col-md-7 col-md-push-1 animate-box fadeInUp animated-fast">
 
-                <form method="post" action="{{route('storemessage')}}" enctype="multipart/form-data">
+                <form method="post" action="{{route('storemessage')}}">
                     @csrf
 
                     <div class="row">

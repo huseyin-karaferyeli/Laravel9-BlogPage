@@ -1,53 +1,30 @@
-@extends('layouts.admin_layout')
+@extends('layouts.main_layout')
+
+@section('title', 'User | '. $settings -> title)
+@section('description', $settings -> decsription)
+@section('keywords', $settings -> keywords)
+@section('icon', Storage::url($settings -> icon))
 
 @section('head')
     <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 @endsection
 
-@section('title', 'Blogger Admin Panel')
-
 @section('content')
+    <div id="fh5co-contact">
 
-    <div class="card mb-4">
-        <div class="card-body">
-            <!-- Basic Breadcrumb -->
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="{{route('admin.index')}}">Home</a>
-                    </li>
-
-                    <li class="breadcrumb-item">
-                        <a href="{{route('admin.blog.index')}}">Blogs</a>
-                    </li>
-
-                    <li class="breadcrumb-item active">New Blog</li>
-                </ol>
-            </nav>
-            <!-- Basic Breadcrumb -->
-        </div>
-
-    </div>
-
-    <div class="col-xl">
-        <div class="card mb-4">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <h5 class="mb-0">New Blog</h5>
-                <small class="text-muted float-end">Blogs</small>
-            </div>
-
-            <div class="card-body">
-
-                <form action="{{route('admin.blog.store')}}" method="post" enctype="multipart/form-data">
+        <div class="row animate-box fadeInUp animated-fast">
+            <div class="col-md-12 text-center fh5co-heading">
+                <form action="{{route('userpanel.storeblog')}}" method="post" enctype="multipart/form-data">
                     @csrf
 
                     <input type="hidden" name="user_id" value="{{Auth::id()}}">
+                    <input type="hidden" name="status" value="False">
 
                     <div class="mb-3">
 
                         <label class="form-label">Category</label>
-                        <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example" name="category_id">
-                            @foreach($data as $rs)
+                        <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example" name="category_id" >
+                            @foreach($categories as $rs)
 
                                 <option value="{{$rs -> id}}">{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs -> title)}}</option>
 
@@ -99,23 +76,12 @@
                         </div>
                     </div>
 
-                    <div class="mb-3">
-
-                        <label class="form-label">Status</label>
-                        <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example" name="status">
-                            <option value="True" selected>True</option>
-                            <option value="False">False</option>
-                        </select>
-
-                    </div>
-
                     <div class="card mt-4">
                         <button class="btn btn-primary btn-lg " type="submit">Add New Blog</button>
                     </div>
                 </form>
             </div>
         </div>
+
     </div>
-
-
 @endsection

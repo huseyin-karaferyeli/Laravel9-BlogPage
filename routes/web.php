@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminPanel\CategoryController;
 use App\Http\Controllers\AdminPanel\CommentController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\ImageController;
+use App\Http\Controllers\ImageController as UserImageController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -54,7 +55,20 @@ Route::middleware('auth') -> group(function (){
 
         Route::get('/', 'index') -> name('index');
         Route::get('comments', 'comments') -> name('comments');
+        Route::get('blogs', 'blogs') -> name('blogs');
+        Route::get('createblog', 'createblog') -> name('createblog');
+        Route::post('storeblog', 'storeblog') -> name('storeblog');
+        Route::get('editblog/{id}', 'editblog') -> name('editblog');
+        Route::post('updateblog/{id}', 'updateblog') -> name('updateblog');
+        Route::get('deleteblog/{id}', 'deleteblog') -> name('deleteblog');
         Route::get('destroy/{id}', 'destroy') -> name('destroy');
+
+        Route::prefix('/image') -> name('image.') -> controller(UserImageController::class) -> group(function (){
+            Route::get('/{pid}', 'index') -> name('index');
+            Route::post('/store/{pid}', 'store') -> name('store');
+            Route::get('/detail/{pid}/{id}', 'detail') -> name('detail');
+            Route::get('/delete/{pid}/{id}', 'destroy') -> name('delete');
+        });
 
     });
 
