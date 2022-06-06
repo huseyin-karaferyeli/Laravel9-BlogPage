@@ -41,8 +41,8 @@ class HomeController extends Controller{
     }
 
     public function home(){
-        $sliderdata = Blog::limit(4) -> get();
-        $blogData = Blog::limit(6) -> get();
+        $sliderdata = DB::table('blogs') -> inRandomOrder() -> limit(4) -> get();
+        $blogData = Blog::where('status', '=', 'True') -> get();
         $categories = Category::limit(6) -> get();
         $settings = Setting::first();
 

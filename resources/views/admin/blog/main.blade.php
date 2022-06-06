@@ -33,7 +33,9 @@
                     <th>Title</th>
                     <th>Status</th>
                     <th>Gallery</th>
-                    <th>Operations</th>
+                    <th>Edit</th>
+                    <th>Show</th>
+                    <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
@@ -53,6 +55,8 @@
                         <td>
                             @if($rs -> status == 'True')
                                 <span class="badge bg-success">Active</span>
+                            @elseif($rs -> status == 'New')
+                                <span class="badge bg-info">New</span>
                             @else
                                 <span class="badge bg-warning">Inactive</span>
                             @endif
@@ -73,11 +77,23 @@
                                 <a href="{{route('admin.blog.edit', ['id' => $rs -> id])}}">
                                     <button class="btn btn-outline-success" >Edit</button>
                                 </a>
+                            </div>
 
+                        </td>
+
+                        <td>
+
+                            <div class="demo-inline-spacing">
                                 <a href="{{route('admin.blog.show', ['id' => $rs -> id])}}">
                                     <button class="btn btn-outline-primary" >Show</button>
                                 </a>
+                            </div>
 
+                        </td>
+
+                        <td>
+
+                            <div class="demo-inline-spacing">
                                 <a href="{{route('admin.blog.delete', ['id' => $rs -> id])}}" onclick="return confirm('Are You Sure? You are deleting a category: {{$rs -> title}}');">
                                     <button class="btn btn-outline-danger" >Delete</button>
                                 </a>

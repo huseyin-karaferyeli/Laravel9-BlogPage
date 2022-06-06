@@ -23,7 +23,9 @@
                         <th>Title</th>
                         <th>Status</th>
                         <th>Gallery</th>
-                        <th>Operations</th>
+                        <th>Edit</th>
+                        <th>Show</th>
+                        <th>Delete</th>
                     </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
@@ -54,10 +56,23 @@
                                     <a href="{{route('userpanel.editblog', ['id' => $rs -> id])}}">
                                         <button class="btn-success" >Edit</button>
                                     </a>
+                                </div>
 
+                            </td>
+
+                            <td>
+
+                                <div class="demo-inline-spacing">
                                     <a href="{{route('detail', ['id' => $rs -> id])}}">
                                         <button class="btn-info" >Show</button>
                                     </a>
+                                </div>
+
+                            </td>
+
+                            <td>
+
+                                <div class="demo-inline-spacing">
 
                                     <a href="{{route('userpanel.deleteblog', ['id' => $rs -> id])}}" onclick="return confirm('Are You Sure? You are deleting a blog: {{$rs -> title}}');">
                                         <button class="btn-danger" >Delete</button>

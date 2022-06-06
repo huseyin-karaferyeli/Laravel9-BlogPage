@@ -18,7 +18,7 @@
                     @csrf
 
                     <input type="hidden" name="user_id" value="{{Auth::id()}}">
-                    <input type="hidden" name="status" value="False">
+                    <input type="hidden" name="status" value="New">
 
                     <div class="mb-3">
 

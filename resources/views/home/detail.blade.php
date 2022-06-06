@@ -100,7 +100,6 @@
 
                 <p class="animated-fast">
                     <a class="btn btn-primary btn-danger" href="{{route('like', ['id' => $data -> id])}}"><i class="icon-heart"></i> Like</a>
-                    <a class="btn btn-primary btn-demo" href="#"><i class="icon-box-add"></i> Save</a>
                 </p>
             </div>
 

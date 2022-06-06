@@ -32,7 +32,9 @@
                     <th>Parent Category</th>
                     <th>Title</th>
                     <th>Status</th>
-                    <th>Operations</th>
+                    <th>Edit</th>
+                    <th>Show</th>
+                    <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody class="table-border-bottom-0 ">
@@ -64,11 +66,23 @@
                                 <a href="{{route('admin.category.edit', ['id' => $rs -> id])}}">
                                     <button class="btn btn-outline-success" >Edit</button>
                                 </a>
+                            </div>
 
+                        </td>
+
+                        <td>
+
+                            <div class="demo-inline-spacing">
                                 <a href="{{route('admin.category.show', ['id' => $rs -> id])}}">
                                     <button class="btn btn-outline-primary" >Show</button>
                                 </a>
+                            </div>
 
+                        </td>
+
+                        <td>
+
+                            <div class="demo-inline-spacing">
                                 <a href="{{route('admin.category.delete', ['id' => $rs -> id])}}" onclick="return confirm('Are You Sure? You are deleting a category: {{$rs -> title}}');">
                                     <button class="btn btn-outline-danger" >Delete</button>
                                 </a>
